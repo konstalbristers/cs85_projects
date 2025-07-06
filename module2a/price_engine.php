@@ -57,6 +57,10 @@
                 }
                 
             }
+            if (strlen($customerFirstName) > 6) {
+                $finalPrice = $finalPrice - 1;
+                $details .= "<li>Long name discount: <span>- $1.00</span></li>";
+            }
 
             // --- DO NOT EDIT BELOW THIS LINE ---
             echo "<ul>" . $details . "</ul>";
