@@ -36,6 +36,10 @@
                 $finalPrice = $finalPrice + 1.75;
                 $details .= "<li>Size (L) Upcharge: <span>+ $1.75</span></li>";
             }
+            if ($isCustomized) {
+                $finalPrice = $finalPrice + 5;
+                $details .= "<li>Customization fee: <span>+ $5.00</span></li>";
+            }
             if ($size === "XL") {
                 $finalPrice = $finalPrice + 2.50;
                 $details .= "<li>Size (XL) Upcharge: <span>+ $2.50</span></li>";
