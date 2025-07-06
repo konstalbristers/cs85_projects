@@ -18,7 +18,7 @@
         <?php
             // --- Configuration: Change these values to test all business rules! ---
             $size = 'XL'; // Options: 'S', 'M', 'L', 'XL'
-            $color = 'Sunset Orange'; // Any string, but test with 'Sunset Orange' or 'Ocean Blue'
+            $color = 'Ocean Blue'; // Any string, but test with 'Sunset Orange' or 'Ocean Blue'
             $isCustomized = true; // Options: true, false
             $customerFirstName = 'Andriana'; // <-- IMPORTANT: REPLACE WITH YOUR ACTUAL FIRST NAME
 
@@ -32,11 +32,7 @@
             //     $finalPrice = $finalPrice + 1.75;
             //     $details .= "<li>Size (L) Upcharge: <span>+$1.75</span></li>";
             // }
-            if ($color === "Sunset Orange") {
-                $finalPrice = $finalPrice + 2;
-                $details .= "<li>Premium Color Upcharge: <span>+ $2.00</span></li>";
-            }
-            if ($color === "Ocean Blue") {
+            if ($color === "Sunset Orange" || $color === "Ocean Blue") { // price goes up by 2 if the color is sunset orange or ocean blue
                 $finalPrice = $finalPrice + 2;
                 $details .= "<li>Premium Color Upcharge: <span>+ $2.00</span></li>";
             }
