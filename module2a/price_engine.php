@@ -17,7 +17,7 @@
         <h1>Order Summary</h1>
         <?php
             // --- Configuration: Change these values to test all business rules! ---
-            $size = 'L'; // Options: 'S', 'M', 'L', 'XL'
+            $size = 'XL'; // Options: 'S', 'M', 'L', 'XL'
             $color = 'Sunset Orange'; // Any string, but test with 'Sunset Orange' or 'Ocean Blue'
             $isCustomized = true; // Options: true, false
             $customerFirstName = 'Andriana'; // <-- IMPORTANT: REPLACE WITH YOUR ACTUAL FIRST NAME
@@ -32,23 +32,6 @@
             //     $finalPrice = $finalPrice + 1.75;
             //     $details .= "<li>Size (L) Upcharge: <span>+$1.75</span></li>";
             // }
-            if ($size === "L") {
-                $finalPrice = $finalPrice + 1.75;
-                $details .= "<li>Size (L) Upcharge: <span>+ $1.75</span></li>";
-            }
-            if ($isCustomized) {
-                $finalPrice = $finalPrice + 5;
-                $details .= "<li>Customization fee: <span>+ $5.00</span></li>";
-            }
-            if ($size === "XL") {
-                $finalPrice = $finalPrice + 2.50;
-                $details .= "<li>Size (XL) Upcharge: <span>+ $2.50</span></li>";
-                if ($isCustomized) {
-                    $finalPrice = $finalPrice + 3;
-                    $details .= "<li>Additional handling fee: <span>+ $3</span></li>";
-                }
-                
-            }
             if ($color === "Sunset Orange") {
                 $finalPrice = $finalPrice + 2;
                 $details .= "<li>Premium Color Upcharge: <span>+ $2.00</span></li>";
@@ -57,7 +40,23 @@
                 $finalPrice = $finalPrice + 2;
                 $details .= "<li>Premium Color Upcharge: <span>+ $2.00</span></li>";
             }
-
+            if ($isCustomized) {
+                $finalPrice = $finalPrice + 5;
+                $details .= "<li>Customization fee: <span>+ $5.00</span></li>";
+            }
+            if ($size === "L") {
+                $finalPrice = $finalPrice + 1.75;
+                $details .= "<li>Size (L) Upcharge: <span>+ $1.75</span></li>";
+            }
+            if ($size === "XL") {
+                $finalPrice = $finalPrice + 2.50;
+                $details .= "<li>Size (XL) Upcharge: <span>+ $2.50</span></li>";
+                if ($isCustomized) {
+                    $finalPrice = $finalPrice + 3;
+                    $details .= "<li>Additional handling fee: <span>+ $3.00</span></li>";
+                }
+                
+            }
 
             // --- DO NOT EDIT BELOW THIS LINE ---
             echo "<ul>" . $details . "</ul>";
