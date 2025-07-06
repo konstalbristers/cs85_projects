@@ -39,6 +39,10 @@
             if ($size === "XL") {
                 $finalPrice = $finalPrice + 2.50;
                 $details .= "<li>Size (XL) Upcharge: <span>+ $2.50</span></li>";
+                if ($isCustomized) {
+                    $finalPrice = $finalPrice + 3;
+                    $details .= "<li>Additional handling fee: <span>+ $3</span></li>";
+                }
                 
             }
             if ($color === "Sunset Orange") {
