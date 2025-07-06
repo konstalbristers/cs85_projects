@@ -45,6 +45,10 @@
                 $finalPrice = $finalPrice + 2;
                 $details .= "<li>Premium Color Upcharge: <span>+ $2.00</span></li>";
             }
+            if ($color === "Ocean Blue") {
+                $finalPrice = $finalPrice + 2;
+                $details .= "<li>Premium Color Upcharge: <span>+ $2.00</span></li>";
+            }
 
 
             // --- DO NOT EDIT BELOW THIS LINE ---
