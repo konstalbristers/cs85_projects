@@ -60,7 +60,10 @@
             // --- DO NOT EDIT BELOW THIS LINE ---
             echo "<ul>" . $details . "</ul>";
             echo "<ul><li><span class='total'>Final Price:</span> <span class='total'>$" . number_format($finalPrice, 2) . "</span></li></ul>";
-
+            /* MY DEBUGGING LOG:
+            Problem: in part B with the if statements for the sizes, i put the elseif statement for size xl before the elseif statement for size xl and iscustomized so the additional handling fee didnt show up
+            Solution: i put the elseif statement for size xl after the elseif statement for size xl and iscustomized
+            */
         ?>
     </div>
 </body>
