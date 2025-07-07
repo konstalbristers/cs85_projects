@@ -43,16 +43,15 @@
             if ($size === "L") {
                 $finalPrice = $finalPrice + 1.75;
                 $details .= "<li>Size (L) Upcharge: <span>+ $1.75</span></li>";
-            }
-            if ($size === "XL") {
-                $finalPrice = $finalPrice + 2.50;
+            } elseif ($size == "XL" && $isCustomized) {
+                $finalPrice = $finalPrice + 5.50;
                 $details .= "<li>Size (XL) Upcharge: <span>+ $2.50</span></li>";
-                if ($isCustomized) {
-                    $finalPrice = $finalPrice + 3;
-                    $details .= "<li>Additional handling fee: <span>+ $3.00</span></li>";
-                }
-                
+                $details .= "<li>Additional handling fee: <span>+ $3.00</span></li>";
+            } elseif ($size === "XL") {
+                $finalPrice =$finalPrice + 2.50;
+                $details .= "<li>Size (XL) Upcharge: <span>+ $2.50</span></li>";
             }
+
             if (strlen($customerFirstName) > 6) {
                 $finalPrice = $finalPrice - 1;
                 $details .= "<li>Long name discount: <span>- $1.00</span></li>";
